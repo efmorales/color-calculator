@@ -33,7 +33,15 @@ If the user chooses to combine, prompt them for two colors (one at a time). Comb
 
 If the user chooses to deconstruct, prompt them for a single color. Deconstruct the color (using if, else if, and else statements) then log the result.
 
+## Stretch goals
+
+Remove the intial question about whether the user wants to combine or deconstruct. Instead, prompt the user a single time for colors. If the user inputs a single color (i.e.: "purple"), deconstruct it. If the user inputs two colors separated by a space, (i.e.: "red blue"), combine them.
+
+To do this, check out the string method, .includes(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+
 */
+
+// What fundamental operations and variables do you need initially?
 
 const prompt = require('prompt-sync')({sigint: true});
 
@@ -43,6 +51,8 @@ let combineColors1 = String()
 let combineColors2 = String()
 let deconstructColors = String()
 
+// How you can create two prompts that would let you choose between 'combine' and 'deconstruct' and have their own path?
+
 if(firstChoice === 'combine') {
     combineColors1 = String(prompt(`Select one of the following colors to combine: red, blue or yellow: `)).toLowerCase();
     combineColors2 = String(prompt(`Select the last color to combine: red, blue or yellow: `)).toLowerCase();
@@ -51,7 +61,7 @@ if(firstChoice === 'combine') {
     deconstructColors = String(prompt(`Deconstruct one the following colors: purple, orange, green: `)).toLowerCase();
 }
 
-// --------------------------
+// How you can create the rest of combinations and their results?
 
 if (combineColors1 === `red` && combineColors2 == `blue`) {
     console.log (`red and blue creates Purple!`)
